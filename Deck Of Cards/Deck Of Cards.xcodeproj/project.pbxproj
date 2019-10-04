@@ -11,6 +11,15 @@
 		35AE58B2234695DF00E50EC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35AE58B0234695DF00E50EC7 /* Main.storyboard */; };
 		35AE58B4234695E000E50EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35AE58B3234695E000E50EC7 /* Assets.xcassets */; };
 		35AE58B7234695E000E50EC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35AE58B5234695E000E50EC7 /* LaunchScreen.storyboard */; };
+		35AE58C42346999100E50EC7 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AE58C32346999100E50EC7 /* CardsViewController.swift */; };
+		35AE58C623469A0500E50EC7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AE58C523469A0500E50EC7 /* Card.swift */; };
+		35AE58CA23469CF500E50EC7 /* Card Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AE58C923469CF500E50EC7 /* Card Controller.swift */; };
+		35E19ADF2347CE7E00477663 /* Pile Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19ADE2347CE7E00477663 /* Pile Controller.swift */; };
+		35E19AE12347D0CB00477663 /* Pile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19AE02347D0CB00477663 /* Pile.swift */; };
+		35E19AE32347D29600477663 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19AE22347D29600477663 /* Deck.swift */; };
+		35E19AE52347D2C700477663 /* Deck Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19AE42347D2C700477663 /* Deck Controller.swift */; };
+		35E19AE92347E28E00477663 /* PileLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19AE82347E28E00477663 /* PileLogTableViewCell.swift */; };
+		35E19AEB2347E2A700477663 /* CardLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19AEA2347E2A700477663 /* CardLogTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +29,15 @@
 		35AE58B3234695E000E50EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35AE58B6234695E000E50EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35AE58B8234695E000E50EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35AE58C32346999100E50EC7 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		35AE58C523469A0500E50EC7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		35AE58C923469CF500E50EC7 /* Card Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card Controller.swift"; sourceTree = "<group>"; };
+		35E19ADE2347CE7E00477663 /* Pile Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pile Controller.swift"; sourceTree = "<group>"; };
+		35E19AE02347D0CB00477663 /* Pile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pile.swift; sourceTree = "<group>"; };
+		35E19AE22347D29600477663 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		35E19AE42347D2C700477663 /* Deck Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck Controller.swift"; sourceTree = "<group>"; };
+		35E19AE82347E28E00477663 /* PileLogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PileLogTableViewCell.swift; sourceTree = "<group>"; };
+		35E19AEA2347E2A700477663 /* CardLogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLogTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +70,9 @@
 		35AE58AB234695DF00E50EC7 /* Deck Of Cards */ = {
 			isa = PBXGroup;
 			children = (
+				35AE58C723469A0F00E50EC7 /* Models */,
+				35AE58C823469CDE00E50EC7 /* Model Controllers */,
+				35AE58C22346994100E50EC7 /* View Controllers */,
 				35AE58BF2346962300E50EC7 /* Views */,
 				35AE58BE2346961A00E50EC7 /* Resources */,
 			);
@@ -73,8 +94,38 @@
 			isa = PBXGroup;
 			children = (
 				35AE58B0234695DF00E50EC7 /* Main.storyboard */,
+				35E19AE82347E28E00477663 /* PileLogTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		35AE58C22346994100E50EC7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				35AE58C32346999100E50EC7 /* CardsViewController.swift */,
+				35E19AEA2347E2A700477663 /* CardLogTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		35AE58C723469A0F00E50EC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				35E19AE22347D29600477663 /* Deck.swift */,
+				35E19AE02347D0CB00477663 /* Pile.swift */,
+				35AE58C523469A0500E50EC7 /* Card.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		35AE58C823469CDE00E50EC7 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				35E19AE42347D2C700477663 /* Deck Controller.swift */,
+				35E19ADE2347CE7E00477663 /* Pile Controller.swift */,
+				35AE58C923469CF500E50EC7 /* Card Controller.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E19AE32347D29600477663 /* Deck.swift in Sources */,
+				35AE58C42346999100E50EC7 /* CardsViewController.swift in Sources */,
+				35E19AE92347E28E00477663 /* PileLogTableViewCell.swift in Sources */,
+				35AE58C623469A0500E50EC7 /* Card.swift in Sources */,
+				35E19AE52347D2C700477663 /* Deck Controller.swift in Sources */,
+				35AE58CA23469CF500E50EC7 /* Card Controller.swift in Sources */,
+				35E19AE12347D0CB00477663 /* Pile.swift in Sources */,
+				35E19ADF2347CE7E00477663 /* Pile Controller.swift in Sources */,
+				35E19AEB2347E2A700477663 /* CardLogTableViewController.swift in Sources */,
 				35AE58AD234695DF00E50EC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

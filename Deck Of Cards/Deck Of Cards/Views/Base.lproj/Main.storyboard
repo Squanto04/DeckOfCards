@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zbk-CX-Uxp">
+    <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,19 +10,209 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cards View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Deck_Of_Cards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="Deck_Of_Cards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="znf-lW-F6K">
+                                <rect key="frame" x="117" y="170" width="600" height="360"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-zM-7oG">
+                                        <rect key="frame" x="0.0" y="0.0" width="259" height="360"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FNc-zM-7oG" secondAttribute="height" multiplier="113:157" id="oam-Uf-mYO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCO-RQ-fQY">
+                                        <rect key="frame" x="341" y="0.0" width="259" height="360"/>
+                                        <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="uCO-RQ-fQY" secondAttribute="height" multiplier="113:157" id="2su-vg-0qX"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="drawNewCardButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hzj-WL-E37"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="9Iu-aK-slc">
+                                <rect key="frame" x="60" y="679" width="714" height="308"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LVL-TK-8V7">
+                                        <rect key="frame" x="0.0" y="0.0" width="222" height="308"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="LVL-TK-8V7" secondAttribute="height" multiplier="204:283" id="2N2-DX-vhj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qaj-BK-CTL">
+                                        <rect key="frame" x="246" y="0.0" width="222" height="308"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qaj-BK-CTL" secondAttribute="height" multiplier="204:283" id="Pap-RC-YP0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jv1-fr-et1">
+                                        <rect key="frame" x="492" y="0.0" width="222" height="308"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jv1-fr-et1" secondAttribute="height" multiplier="204:283" id="kxx-IL-LDa"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select 'New Deck' in the Menu to start!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nte-Dd-ovM">
+                                <rect key="frame" x="210" y="105" width="414.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaR-V5-rNN">
+                                <rect key="frame" x="689" y="90" width="125" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="Rsy-1Z-quB"/>
+                                    <constraint firstAttribute="height" constant="48" id="tu0-h0-XXF"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="ufl28o8bm2wi"/>
+                                <connections>
+                                    <action selector="setCurrentDeckIDButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D6C-Qp-gtP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29019607843137257" green="0.4823529411764706" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gaR-V5-rNN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="349-kC-Ulg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="znf-lW-F6K" secondAttribute="trailing" constant="117" id="5F6-SA-GSX"/>
+                            <constraint firstItem="Nte-Dd-ovM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7x6-KO-xlI"/>
+                            <constraint firstItem="znf-lW-F6K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="SJG-lf-eqV"/>
+                            <constraint firstItem="znf-lW-F6K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="U5R-0A-uLi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Iu-aK-slc" secondAttribute="trailing" constant="60" id="cs9-Mh-fXh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Iu-aK-slc" secondAttribute="bottom" constant="125" id="j5C-tl-qIh"/>
+                            <constraint firstItem="9Iu-aK-slc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="qFv-xl-sFK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gaR-V5-rNN" secondAttribute="trailing" constant="20" id="us8-bT-5lK"/>
+                            <constraint firstItem="Nte-Dd-ovM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="vyq-Ep-psg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OyT-D4-9bI">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="ZRQ-Xq-scY">
+                            <connections>
+                                <action selector="pauseButtonTapped:" destination="BYZ-38-t0r" id="sg7-58-xhf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="drawNewCardButton" destination="uCO-RQ-fQY" id="fec-lN-CMw"/>
+                        <outlet property="firstCardImageView" destination="LVL-TK-8V7" id="d5o-Na-cvs"/>
+                        <outlet property="newCardImageView" destination="FNc-zM-7oG" id="44t-qO-AZa"/>
+                        <outlet property="secondCardImageView" destination="qaj-BK-CTL" id="F6M-Bz-wKG"/>
+                        <outlet property="thirdCardImageView" destination="jv1-fr-et1" id="Inh-MC-xN8"/>
+                        <outlet property="topWarningLabel" destination="Nte-Dd-ovM" id="hFz-pI-N37"/>
+                        <segue destination="trI-Oz-b4k" kind="show" identifier="toCardLogVC" id="d1b-ey-Nvc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="903.59712230215837" y="134.89208633093526"/>
+        </scene>
+        <!--Card Log-->
+        <scene sceneID="Saf-Oi-Mol">
+            <objects>
+                <tableViewController id="trI-Oz-b4k" customClass="CardLogTableViewController" customModule="Deck_Of_Cards" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Cq-PU-hqL">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.19215686274509805" green="0.40392156862745099" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="gHI-Bo-86a">
+                            <rect key="frame" x="0.0" y="0.0" width="834" height="93"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cards Left In Deck: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXA-KJ-ofI">
+                                    <rect key="frame" x="25" y="25" width="784" height="43"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.23921568627450981" green="0.44313725490196076" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="NXA-KJ-ofI" firstAttribute="top" secondItem="gHI-Bo-86a" secondAttribute="top" constant="25" id="Udn-YB-Ahu"/>
+                                <constraint firstAttribute="trailing" secondItem="NXA-KJ-ofI" secondAttribute="trailing" constant="25" id="cap-rh-eca"/>
+                                <constraint firstItem="NXA-KJ-ofI" firstAttribute="leading" secondItem="gHI-Bo-86a" secondAttribute="leading" constant="25" id="uv6-Ez-en8"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cardLogCell" rowHeight="250" id="8RU-fj-6fT" customClass="PileLogTableViewCell" customModule="Deck_Of_Cards" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="121" width="834" height="250"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8RU-fj-6fT" id="l7s-Cc-ZbP">
+                                    <rect key="frame" x="0.0" y="0.0" width="834" height="249.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfe-2V-aai">
+                                            <rect key="frame" x="95" y="28" width="140" height="194"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Nfe-2V-aai" secondAttribute="height" multiplier="70:97" id="Ned-VK-Pe8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ace Spades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7W-mn-Zey">
+                                            <rect key="frame" x="325" y="74" width="204.5" height="102"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Q7W-mn-Zey" secondAttribute="trailing" id="27x-Ee-cjp"/>
+                                        <constraint firstItem="Q7W-mn-Zey" firstAttribute="leading" secondItem="Nfe-2V-aai" secondAttribute="trailing" constant="90" id="D2Z-Un-Wxs"/>
+                                        <constraint firstItem="Nfe-2V-aai" firstAttribute="leading" secondItem="l7s-Cc-ZbP" secondAttribute="leadingMargin" constant="75" id="JMQ-cs-tGO"/>
+                                        <constraint firstItem="Q7W-mn-Zey" firstAttribute="top" secondItem="l7s-Cc-ZbP" secondAttribute="topMargin" constant="63" id="hVJ-lu-3GW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Q7W-mn-Zey" secondAttribute="bottom" constant="63" id="joK-Tr-iUv"/>
+                                        <constraint firstItem="Nfe-2V-aai" firstAttribute="top" secondItem="l7s-Cc-ZbP" secondAttribute="topMargin" constant="17" id="n9d-yX-89D"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Nfe-2V-aai" secondAttribute="bottom" constant="17" id="xeZ-Cc-Qor"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.23921568627450981" green="0.44313725490196076" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="cardLogImageView" destination="Nfe-2V-aai" id="LFH-zv-Y3D"/>
+                                    <outlet property="cardValueLabel" destination="Q7W-mn-Zey" id="G95-a2-Wfo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="trI-Oz-b4k" id="Kdf-yK-C1v"/>
+                            <outlet property="delegate" destination="trI-Oz-b4k" id="l9Y-vL-wRf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Card Log" id="xHc-Ou-3ts"/>
+                    <connections>
+                        <outlet property="cardsLeftInDeck" destination="NXA-KJ-ofI" id="Lp1-S8-i1s"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WsB-jb-baH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1589.9280575539569" y="134.89208633093526"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BBR-Kj-cLF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zbk-CX-Uxp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r1W-27-bNa">
+                        <rect key="frame" x="0.0" y="20" width="834" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z13-h4-Qge"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CyB-hj-VhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.5" y="134.765625"/>
         </scene>
     </scenes>
 </document>
