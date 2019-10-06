@@ -55,6 +55,8 @@ class DeckController {
         shuffleURL.appendPathComponent(deckId)
         shuffleURL.appendPathComponent(DeckStringConstants.shuffleComponent)
         print(shuffleURL)
+        let dataTask = URLSession.shared.dataTask(with: shuffleURL)
+        dataTask.resume()
     }
     
 }

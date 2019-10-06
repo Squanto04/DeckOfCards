@@ -15,6 +15,8 @@ struct PileStringConstants {
     fileprivate static let cardTerm = "cards"
     fileprivate static let pileName = "discarded"
     fileprivate static let listTerm = "list/"
+    fileprivate static let countQueryTerm = "count"
+    fileprivate static let drawTerm = "draw/"
 }
 
 class PileController {
@@ -35,23 +37,7 @@ class PileController {
         guard let finalAddToPileURL = components.url else { return }
         print(finalAddToPileURL)
         
-        let dataTask = URLSession.shared.dataTask(with: finalAddToPileURL) { (data, _, error) in
-            if let error = error {
-                print("AddCardToPile Decoding Error: \(error.localizedDescription)")
-            }
-            guard let data = data else {
-                print("There is no pile data")
-                return }
-            do {
-                let pile = try JSONDecoder().decode(PileTLD.self, from: data)
-                print(pile.success)
-                print("\(pile.remaining) left in the deck")
-                print("\(pile.piles.discarded.remaining) Cards in Pile")
-                completion()
-            } catch {
-                print("AddCardToPile Decoding To pile Error: \(error.localizedDescription)")
-            }
-        }
+        let dataTask = URLSession.shared.dataTask(with: finalAddToPileURL)
         dataTask.resume()
     }
     
@@ -80,9 +66,20 @@ class PileController {
         dataTask.resume()
     }
     
-    static func addCardsBackToDeck(pile amount: Int, completion: @escaping () -> Void) {
+    static func addCardsBackToDeck(for deck: String, pile amount: Int, completion: @escaping () -> Void) {
         // Goal URL: https://deckofcardsapi.com/api/deck/<<deck_id>>/pile/discarded/draw/?count=2
         guard var backToDeckURL = PileStringConstants.baseURL else { return }
+        backToDeckURL.appendPathComponent(deck)
+        backToDeckURL.appendPathComponent(PileStringConstants.pileTerm)
+        backToDeckURL.appendPathComponent(PileStringConstants.pileName)
+        backToDeckURL.appendPathComponent(PileStringConstants.drawTerm)
+        guard var components = URLComponents(url: backToDeckURL, resolvingAgainstBaseURL: true) else { return }
+        let countQuery = URLQueryItem(name: PileStringConstants.countQueryTerm, value: "\(amount)")
+        components.queryItems = [countQuery]
+        guard let returnPileURL = components.url else { return }
+        print(returnPileURL)
+        let dataTask = URLSession.shared.dataTask(with: returnPileURL)
+        dataTask.resume()
     }
     
 }

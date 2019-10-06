@@ -69,10 +69,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaR-V5-rNN">
-                                <rect key="frame" x="689" y="90" width="125" height="48"/>
+                                <rect key="frame" x="714" y="90" width="100" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="Rsy-1Z-quB"/>
                                     <constraint firstAttribute="height" constant="48" id="tu0-h0-XXF"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,19 +80,90 @@
                                     <action selector="setCurrentDeckIDButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D6C-Qp-gtP"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flo-Vp-OHC">
+                                <rect key="frame" x="267" y="356" width="300" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEs-1d-fkI">
+                                        <rect key="frame" x="113" y="32" width="73.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xcd-fJ-x0f">
+                                        <rect key="frame" x="85" y="108" width="130" height="230"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-GW-qdd">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ObE-GW-qdd" secondAttribute="height" multiplier="26:7" id="pVQ-sh-aZW"/>
+                                                    <constraint firstAttribute="height" constant="35" id="wBN-wM-ZeC"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="New Deck"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ni1-82-2nf">
+                                                <rect key="frame" x="0.0" y="65" width="130" height="35"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="Rq5-Wl-4zM"/>
+                                                    <constraint firstAttribute="width" secondItem="ni1-82-2nf" secondAttribute="height" multiplier="26:7" id="gDM-wu-dUF"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Shuffle Deck"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgZ-qG-wFY">
+                                                <rect key="frame" x="0.0" y="130" width="130" height="35"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="IgZ-qG-wFY" secondAttribute="height" multiplier="26:7" id="MrJ-Il-54o"/>
+                                                    <constraint firstAttribute="height" constant="35" id="YX1-tJ-Zj8"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Card Log"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNy-cg-Wgh">
+                                                <rect key="frame" x="0.0" y="195" width="130" height="35"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="eq3-lg-Kb5"/>
+                                                    <constraint firstAttribute="width" secondItem="dNy-cg-Wgh" secondAttribute="height" multiplier="26:7" id="u3W-u4-8Ke"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Cancel"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uEs-1d-fkI" firstAttribute="leading" secondItem="Flo-Vp-OHC" secondAttribute="leading" constant="113" id="G1r-LZ-Xke"/>
+                                    <constraint firstItem="Xcd-fJ-x0f" firstAttribute="leading" secondItem="Flo-Vp-OHC" secondAttribute="leading" constant="85" id="LsT-0j-WIy"/>
+                                    <constraint firstItem="uEs-1d-fkI" firstAttribute="top" secondItem="Flo-Vp-OHC" secondAttribute="top" constant="32" id="UNY-BW-7Ij"/>
+                                    <constraint firstItem="Xcd-fJ-x0f" firstAttribute="top" secondItem="uEs-1d-fkI" secondAttribute="bottom" constant="40" id="dcw-Oe-Hbw"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uEs-1d-fkI" secondAttribute="trailing" constant="20" symbolic="YES" id="hab-gB-oax"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xcd-fJ-x0f" secondAttribute="trailing" constant="85" id="xHN-r7-2Pq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xcd-fJ-x0f" secondAttribute="bottom" constant="62" id="xcf-n0-kRw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.29019607843137257" green="0.4823529411764706" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gaR-V5-rNN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="349-kC-Ulg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Flo-Vp-OHC" secondAttribute="bottom" constant="356" id="4i6-Lo-3uq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="znf-lW-F6K" secondAttribute="trailing" constant="117" id="5F6-SA-GSX"/>
                             <constraint firstItem="Nte-Dd-ovM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7x6-KO-xlI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Flo-Vp-OHC" secondAttribute="trailing" constant="267" id="9lu-u0-AJ1"/>
+                            <constraint firstItem="Flo-Vp-OHC" firstAttribute="top" secondItem="Nte-Dd-ovM" secondAttribute="bottom" constant="221" id="MhF-P4-qee"/>
                             <constraint firstItem="znf-lW-F6K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="SJG-lf-eqV"/>
                             <constraint firstItem="znf-lW-F6K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="U5R-0A-uLi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Iu-aK-slc" secondAttribute="trailing" constant="60" id="cs9-Mh-fXh"/>
+                            <constraint firstItem="gaR-V5-rNN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nte-Dd-ovM" secondAttribute="trailing" constant="8" symbolic="YES" id="e2t-BS-WEd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Iu-aK-slc" secondAttribute="bottom" constant="125" id="j5C-tl-qIh"/>
                             <constraint firstItem="9Iu-aK-slc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="qFv-xl-sFK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gaR-V5-rNN" secondAttribute="trailing" constant="20" id="us8-bT-5lK"/>
                             <constraint firstItem="Nte-Dd-ovM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="vyq-Ep-psg"/>
+                            <constraint firstItem="Flo-Vp-OHC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="267" id="yYA-g9-bmf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

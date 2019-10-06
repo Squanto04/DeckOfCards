@@ -40,10 +40,14 @@ class CardsViewController: UIViewController {
                 }
             })
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (_) in
         }
+        
         let shuffleAction = UIAlertAction(title: "Shuffle", style: .default) { (_) in
             DeckController.shuffleCards(deckId: DeckController.currentDeckID, completion: {
+            })
+            PileController.addCardsBackToDeck(for: DeckController.currentDeckID, pile: PileController.leftInPile, completion: {
             })
         }
         let cardLogAction = UIAlertAction(title: "Card Log", style: .default) { (_) in
@@ -61,12 +65,14 @@ class CardsViewController: UIViewController {
     
     @IBAction func drawNewCardButtonTapped(_ sender: Any) {
         drawCard()
+        setCardHistory()
     }
     
     func drawCard() {
         CardController.drawCard(numberOfCards: 1, with: DeckController.currentDeckID) { (cards) in
             let card = cards[0]
-            CardController.getImage(forURL: card.image, completion: { (image) in
+            guard let image = card.image else { return }
+            CardController.getImage(forURL: image, completion: { (image) in
                 guard let image = image else { return }
                 DispatchQueue.main.async {
                     self.newCardImageView.image = image
@@ -75,6 +81,38 @@ class CardsViewController: UIViewController {
                     print("Card Added to Discard Pile")
                 })
             })
+        }
+    }
+    
+    func setCardHistory() {
+        PileController.listCardsInPile(deck: DeckController.currentDeckID) { (cards) in
+            guard let cardSlotOne = cards[1].image else { return }
+            if !cardSlotOne.isEmpty {
+                CardController.getImage(forURL: cardSlotOne, completion: { (image) in
+                    guard let image = image else { return }
+                    DispatchQueue.main.async {
+                        self.firstCardImageView.image = image
+                    }
+                })
+            }
+            guard let cardSlotTwo = cards[2].image else { return }
+            if !cardSlotTwo.isEmpty {
+                CardController.getImage(forURL: cardSlotTwo, completion: { (image) in
+                    guard let image = image else { return }
+                    DispatchQueue.main.async {
+                        self.secondCardImageView.image = image
+                    }
+                })
+            }
+            guard let cardSlotThree = cards[3].image else { return }
+            if !cardSlotThree.isEmpty {
+                CardController.getImage(forURL: cardSlotThree, completion: { (image) in
+                    guard let image = image else { return }
+                    DispatchQueue.main.async {
+                        self.thirdCardImageView.image = image
+                    }
+                })
+            }
         }
     }
     

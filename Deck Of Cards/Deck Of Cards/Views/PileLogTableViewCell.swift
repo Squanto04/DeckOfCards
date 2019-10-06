@@ -23,7 +23,8 @@ class PileLogTableViewCell: UITableViewCell {
         guard let item = cardItem else { return }
         cardValueLabel.text = "\(item.value) \(item.suit)"
         cardLogImageView.image = nil
-        CardController.getImage(forURL: item.image) { (image) in
+        guard let image = item.image else { return }
+        CardController.getImage(forURL: image) { (image) in
             guard let image = image else { return }
             DispatchQueue.main.async {
                 self.cardLogImageView.image = image
