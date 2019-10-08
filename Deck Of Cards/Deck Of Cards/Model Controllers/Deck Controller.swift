@@ -28,7 +28,7 @@ class DeckController {
         let deckCountQuery = URLQueryItem(name: DeckStringConstants.deckCountQueryKey, value: "\(count)")
         components.queryItems = [deckCountQuery]
         guard let finalDeckURL = components.url else { return }
-        print(finalDeckURL)
+        print("New Deck")
         
         let dataTask = URLSession.shared.dataTask(with: finalDeckURL) { (data, _, error) in
             if let error = error {
@@ -38,6 +38,7 @@ class DeckController {
             do {
                 let deck = try JSONDecoder().decode(NewDeck.self, from: data)
                 self.currentDeckID = deck.deckid
+                print(deck.deckid)
                 completion(deck)
             } catch {
                 print("There was an error decoding to deck object: \(error.localizedDescription)")
@@ -54,7 +55,7 @@ class DeckController {
         }
         shuffleURL.appendPathComponent(deckId)
         shuffleURL.appendPathComponent(DeckStringConstants.shuffleComponent)
-        print(shuffleURL)
+        print("Deck Shuffled")
         let dataTask = URLSession.shared.dataTask(with: shuffleURL)
         dataTask.resume()
     }

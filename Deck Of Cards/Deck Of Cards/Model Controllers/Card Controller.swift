@@ -30,7 +30,7 @@ class CardController {
         let cardCountQueryItem = URLQueryItem(name: "count", value: "\(numberOfCards)")
         components.queryItems = [cardCountQueryItem]
         guard let finalURL = components.url else { return }
-        print(finalURL)
+        print("Draw \(numberOfCards) Card for Deck: \(deckId)")
 
         let dataTask = URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             if let error = error {

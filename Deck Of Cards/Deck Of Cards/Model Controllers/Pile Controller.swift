@@ -23,6 +23,8 @@ class PileController {
     
     static var leftInDeck = 52
     static var leftInPile = 0
+    static var cardsReversed: [Card] = []
+    static var discardCount = 0
     
     static func addCardToPile(deck: String, card: Card, completion: @escaping () -> Void) {
         // Goal URL: https://deckofcardsapi.com/api/deck/ufl28o8bm2wi/pile/discarded/add/?cards=4S
@@ -35,8 +37,7 @@ class PileController {
         let cardQuery = URLQueryItem(name: PileStringConstants.cardTerm, value: card.code)
         components.queryItems = [cardQuery]
         guard let finalAddToPileURL = components.url else { return }
-        print(finalAddToPileURL)
-        
+        print("\(card.code) Added to Discard Pile")
         let dataTask = URLSession.shared.dataTask(with: finalAddToPileURL)
         dataTask.resume()
     }
@@ -47,7 +48,7 @@ class PileController {
         cardsInPileURL.appendPathComponent(PileStringConstants.pileTerm)
         cardsInPileURL.appendPathComponent(PileStringConstants.pileName)
         cardsInPileURL.appendPathComponent(PileStringConstants.listTerm)
-        print(cardsInPileURL)
+        print("List Cards In Pile")
         
         let dataTask = URLSession.shared.dataTask(with: cardsInPileURL) { (data, _, error) in
             if let error = error {
@@ -58,6 +59,7 @@ class PileController {
                 let pileTLD = try JSONDecoder().decode(PileTLD.self, from: data)
                 self.leftInDeck = pileTLD.remaining
                 self.leftInPile = pileTLD.piles.discarded.remaining
+                cardsReversed = pileTLD.piles.discarded.cards.reversed()
                 completion(pileTLD.piles.discarded.cards)
             } catch {
                 print("CardsInPile Decoding To cardsInPile Error: \(error.localizedDescription)")
@@ -77,7 +79,8 @@ class PileController {
         let countQuery = URLQueryItem(name: PileStringConstants.countQueryTerm, value: "\(amount)")
         components.queryItems = [countQuery]
         guard let returnPileURL = components.url else { return }
-        print(returnPileURL)
+        print("\(amount) Cards Returned To Deck")
+        discardCount = 0
         let dataTask = URLSession.shared.dataTask(with: returnPileURL)
         dataTask.resume()
     }

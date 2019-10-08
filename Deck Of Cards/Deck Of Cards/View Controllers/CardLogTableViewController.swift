@@ -23,7 +23,7 @@ class CardLogTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         PileController.listCardsInPile(deck: DeckController.currentDeckID) { (cards) in
-            self.pile = cards
+            self.pile = cards.reversed()
             DispatchQueue.main.async {
                 self.cardsLeftInDeck.text = "Cards Left In Deck: \(PileController.leftInDeck)"
             }
