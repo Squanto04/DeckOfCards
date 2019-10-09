@@ -89,7 +89,6 @@ class CardsViewController: UIViewController {
         drawNewCardButton.isEnabled = true
     }
     
-    
     @IBAction func setCurrentDeckIDButton(_ sender: Any) {
         DeckController.shuffleCards(deckId: DeckController.currentDeckID) {}
         endOfDeckShuffleButton.isHidden = true
@@ -100,7 +99,7 @@ class CardsViewController: UIViewController {
         firstCardImageView.image = nil
         secondCardImageView.image = nil
         thirdCardImageView.image = nil
-        
+        PileController.discardCount = 0
     }
     
     @IBAction func drawNewCardButtonTapped(_ sender: Any) {
