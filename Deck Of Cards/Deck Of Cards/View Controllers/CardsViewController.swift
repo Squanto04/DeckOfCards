@@ -46,6 +46,7 @@ class CardsViewController: UIViewController {
             shuffleDeckButton.isEnabled = false
             cardLogButton.isEnabled = false
         }
+        enableNewDeckButton()
     }
     @IBAction func newDeckButtonTapped(_ sender: Any) {
         shuffleDeckButton.isEnabled = true
@@ -198,6 +199,14 @@ class CardsViewController: UIViewController {
             drawNewCardButton.setImage(nil, for: .normal)
             topWarningLabel.text = "There are no more cards left in the deck."
             endOfDeckShuffleButton.isHidden = false
+        }
+    }
+    
+    func enableNewDeckButton() {
+        if DeckController.currentDeckID == "" {
+            newDeckButton.isEnabled = true
+        } else {
+            newDeckButton.isEnabled = false
         }
     }
     
